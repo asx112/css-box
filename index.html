@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+ <head>
+  <title>Í¼Æ¬×Ô¶¯¹ö¶¯</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css"/>
+ <!--  <script type="text/javascript" src="js/autoChange.js"></script> -->
+ </head>
+
+ <body>
+ <div id="picScroll">
+	<span id="picScroll1">
+		<img src="images/1.jpg" />
+		<img src="images/2.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/4.jpg" />
+		<img src="images/5.jpg" />
+		<img src="images/6.jpg" />
+		<img src="images/7.jpg" />
+		<img src="images/8.jpg" />
+	</span>
+	<span id="picScroll2">
+		<img src="images/1.jpg" />
+		<img src="images/2.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/4.jpg" />
+		<img src="images/5.jpg" />
+		<img src="images/6.jpg" />
+		<img src="images/7.jpg" />
+		<img src="images/8.jpg" />
+	</span>
+ </div> 
+ </body>
+<script type="text/javascript">
+    var picScroll = document.getElementById("picScroll");
+    var picScroll1 = document.getElementById("picScroll1");
+    function changeImg() {
+    	if(picScroll.scrollLeft  >= picScroll1.offsetWidth) {
+    		picScroll.scrollLeft = 0;
+    	}
+    	else {
+    		picScroll.scrollLeft = picScroll.scrollLeft + 1;
+    	}
+    }
+
+    var intervalId =  setInterval(changeImg, 10)
+
+    picScroll.onmouseover = function() {
+    	clearInterval(intervalId);
+    }
+
+    picScroll.onmouseout = function() {
+    	intervalId =  setInterval(changeImg, 10)
+    }
+</script>
+</html>

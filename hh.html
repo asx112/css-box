@@ -1,0 +1,68 @@
+<html>
+<head>
+<style type="text/css">
+img{
+width:200px;
+height:200px;
+margin-left:10px;
+}
+#outer{
+width:600px;
+height:200px;
+border:1px solid red;
+overflow:hidden;
+white-space:nowrap; 
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	function move(){
+		var outer = document.getElementById("outer");
+		var inner = document.getElementById("inner");
+		if (outer.scrollLeft >= inner.offsetWidth)
+		{
+			outer.scrollLeft = 0;
+		}
+		else{
+			outer.scrollLeft++;
+		}
+	}
+	var id = setInterval(move, 1);
+	var imgs = document.getElementsByTagName("img");
+	for (var i=0; i<imgs.length; i++)
+	{
+		imgs[i].onmouseover = function(){
+			clearInterval(id);
+		}
+		imgs[i].onmouseout = function(){
+			id = setInterval(move, 1);
+		}
+	}
+}
+</script>
+</head>
+<body>
+<div id="outer">
+	<span id="inner">
+		<img src="images/1.jpg" />
+		<img src="images/1.jpg" />
+		<img src="images/1.jpg" />
+		<img src="images/1.jpg" />
+		<img src="images/1.jpg" />
+		<img src="images/1.jpg" />
+		<img src="images/1.jpg" />
+		<img src="images/1.jpg" />
+	</span>
+	<span>
+		<img src="images/3.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/3.jpg" />
+	</span>
+</div>
+</body>
+</html>

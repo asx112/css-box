@@ -1,0 +1,54 @@
+<html>
+<head>
+<style type="text/css">
+#outer{	
+margin:0 auto;
+white-space:nowrap; 
+width:600px;
+height:200px;
+overflow:hidden;
+border:1px solid #C90;
+}
+img{
+width:200px;
+height:200px;
+margin-left:5px;
+}
+</style>
+<script type="text/javascript">
+window.onload = function(){
+	function move(){
+	var outer = document.getElementById("outer");
+	var inner = document.getElementById("inner");
+	if (outer.scrollLeft > inner.offsetWidth)
+	{
+		outer.scrollLeft = 0;
+	}
+	else
+	{
+		outer.scrollLeft++;
+	}
+	}
+	var id = setInterval(move, 10);
+}
+</script>
+</head>
+<body>
+	<div id="outer">
+		<span id="inner" class="inner">
+		<img src="images/1.jpg" />
+		<img src="images/2.jpg" />
+		<img src="images/3.jpg" />
+		<img src="images/4.jpg" />
+		<img src="images/5.jpg" />
+		</span>
+		<span class="inner">
+		<img src="images/4.jpg" />
+		<img src="images/4.jpg" />
+		<img src="images/4.jpg" />
+		<img src="images/4.jpg" />
+		<img src="images/5.jpg" />
+		</span>
+	</div>
+</body>
+</html>
